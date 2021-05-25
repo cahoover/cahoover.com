@@ -1,0 +1,76 @@
+{{ define "main" }}
+
+<!-- page -->
+<div id="homeContent" class="pushFooter">
+
+<!-- band_one.md populates this section -->
+{{ with .Site.GetPage "/home/band_one.md" }}
+  <div class="band first">
+    <div class="bandContent">
+
+<!-- hexes on the left -->
+      <div>
+         <img class="hero" src="images/hero.png" alt="Christopher Hoover">
+      </div>
+
+<!-- text on the right -->
+      <div class="blurb">
+        <div class="article-title">
+          {{ .Title }}
+          </div>
+        <div>
+          {{ .Content | markdownify }}
+        </div>
+      </div>
+
+    </div> <!-- bandContent -->
+  </div>  <!-- band -->
+{{ end }}
+
+<!-- band_two.md populates this section -->
+{{ with .Site.GetPage "/home/band_two.md" }}
+<!-- 
+  <div class="band second">
+    <div class="bandContent">
+      <div class="blurb">
+        <div class="tagline">
+          {{ .Title }}
+        </div>
+        <div>
+          {{ .Content | markdownify }}
+        </div>
+        <img class="bookCover" src="images/cover.png" alt="Parsnip set your engine, illustrated by Allison Horst">
+      </div>
+      <div class="blurb">
+        <div class="tagline small"></div>
+        {{ partial "homepage_sticky" . }}
+      </div>
+    </div> 
+  </div> 
+ -->
+{{ end }}
+
+<!-- band_three.md populates this section -->
+
+{{ with .Site.GetPage "/home/band_three.md" }}
+<!--
+  <div class="band third">
+    <div class="bandContent">
+      <div class="hideOnMobile"><img class="bee1" src="images/parsnip-flagger.jpg" alt=""></div>
+      <div class="blurb">
+        <div class="tagline">
+          {{ .Title }}
+          </div>
+        <div>
+          {{.Content | markdownify }}
+        </div>
+      </div>
+    </div> 
+  </div> 
+-->  
+  </div> <!-- homeContent -->
+{{ end }}
+
+{{ end }}
+
+

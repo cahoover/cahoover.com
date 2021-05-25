@@ -1,0 +1,22 @@
+<div class="section hideOnMobile">
+  <div class="sectionTitle">Explore topics
+  </div>
+    {{ range $index, $element := .FirstSection.Sections }}
+    <ul>
+      <div class="articleCategory">
+        <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+      </div>
+    </ul>
+    {{ end }}
+</div>
+
+   <div class="column25">
+        <div class="section">
+          <div class="sectionTitle">Filter by tag</div>
+          {{ range $key, $value := $.Site.Taxonomies.tags }}
+          <div class="articleCategory {{ replace (lower $key) " " "" }}">
+            <a href="{{ (print "/tags/" $key | urlize) | relURL }}">{{ $key }} ({{ .Count }})</a>
+          </div>
+          {{ end }}
+        </div>
+      </div>

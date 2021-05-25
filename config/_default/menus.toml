@@ -1,0 +1,20 @@
+# Navigation Bar Links
+#   The weight parameter defines the order that the links will appear in.
+
+[[main]]
+    name = "Blog"
+    url = "/blog/"
+    weight = 1
+[[main]]
+    name = "About"
+    url = "/about/"
+    weight = 2
+[[main]]
+    name = "Contact"
+    url = "/contact/"
+    weight = 3
+[[main]]
+    pre = "<i class=\"fab fa-github fa-lg\"></i>"
+    url = "https://github.com/cahoover/"
+    weight = 7
+

@@ -1,0 +1,19 @@
+<div class="section hideOnMobile">
+  <div class="sectionTitle">Topics
+  </div>
+    {{ range $index, $element := .FirstSection.Sections }}
+    <div class="articleCategory">
+      <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+    </div>
+    {{ end }}
+</div>
+
+<div class="section hideOnMobile">
+    <div class="sectionTitle">Tags</div>
+    {{ range $key, $value := $.Site.Taxonomies.tags }}
+    <div class="articleCategory {{ replace (lower $key) " " "" }}">
+      <a href="{{ (print "/tags/" $key | urlize) | relURL }}">{{ $key }} ({{ .Count }})</a>
+    </div>
+    {{ end }}
+  </div>
+
